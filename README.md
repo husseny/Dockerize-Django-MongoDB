@@ -30,7 +30,7 @@ It's necessary to add some environmental variables to your current working termi
 
 ## Using Dockerfiles
 A Dockerfile is a set of instructions that docker uses to build a container or an image. The created container will be the virtual running host for your application. You can find ready to use images to build and through this tutorial you will create your own dockerfiles to build two containers. The first container is an ubuntu virtual machine running a mongoDB instance and saves the data on your actual system. The second container is also an ubuntu virtual machine running the django application(testproj) and enables it to connect to the database instance.
-Before setting up your docker containers you should open settings.py inside your django project and edit the following:
+Before setting up your docker containers you should open settings.py inside your django project and edit or add the following variables to look like this:
 
     DATABASES = {
         'default': {
@@ -43,7 +43,7 @@ Before setting up your docker containers you should open settings.py inside your
     from mongoengine import *
     connect('testdb', host='[docker host ip]',  port=27017)
 
-You can get your docker host ip through your terminal:
+You can get your [docker host ip] through your terminal:
 * For macOS
 
     $ docker-machine ip
@@ -56,11 +56,11 @@ You can get your docker host ip through your terminal:
 
     $ cd dockerfiles
 
-Open setup.sh and edit the variable paths. Use only absolute paths. Make sure port 8000 isn't used and then run the script to build and run your docker containers.
+Open setup.sh and edit the variable paths to point to your django project and where you wish to save your data. Use only absolute paths. Make sure port 8000 isn't used and then run the script to build and run your docker containers.
 
     $ ./setup.sh
 
-Make sure your containers are running by calling docker ps
+Make sure your containers are running by calling docker ps and you can use the other scripts to stop, start & remove your containers.
 
 Now, your django project should be accessible through the browser on localhost:8000
 
