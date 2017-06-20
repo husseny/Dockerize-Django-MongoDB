@@ -60,5 +60,8 @@ Open setup.sh and edit the variable paths. Use only absolute paths. Make sure po
 
     $ ./setup.sh
 
- Make sure your containers are running by calling docker ps
+Make sure your containers are running by calling docker ps
+
 Now, your django project should be accessible through the browser on localhost:8000
+
+For more information on how to use mongoengine visit the [documentation](http://docs.mongoengine.org/tutorial.html)
