@@ -1,0 +1,2 @@
+docker stop django_container
+docker stop mongodb_container

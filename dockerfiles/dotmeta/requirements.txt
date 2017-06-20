@@ -1,0 +1,4 @@
+Django==1.10.0
+pymongo==2.7.1
+six==1.10.0
+mongoengine==0.9.0
